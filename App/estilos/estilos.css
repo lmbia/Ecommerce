@@ -1,0 +1,824 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* colores */
+
+body {
+    --base-color: #f5f5f5;
+    --ppal-color: #fc007e;
+    --negro-color: #3d3d3d;
+    --base-amarillo: #fdfbe0;
+    --color-hover: #ff00aa;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.btn-pedido {
+    background-color: var(--ppal-color);
+    border-color: var(--ppal-color);
+    color: white;
+}
+
+.btn-pedido:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-hover);
+    color: white;
+}
+
+.btn:active {
+    color: #ffffff !important;
+    outline: none !important;
+    background-color: #ff00aa !important;
+    border-color: #ff00aa !important;
+  }
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: var(--ppal-color);
+    border-color: var(--ppal-color);
+}
+
+
+a {
+    color: var(--negro-color);
+    text-decoration: none !important;
+}
+
+nav {
+    height: 3rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background-color: white;
+    height: 4rem;
+}
+
+.fin h1 {
+    font-size: 0;
+}
+
+main, aside {
+   margin-top: 5rem;
+}
+
+#burger,
+.flecha {
+    padding-top: .9rem;
+}
+
+#burger a {
+    display: block;
+}
+
+#burger a[href="#menu"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    background-image: url(../icons/icono-app-la-dinastia-menu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Btn Cerrar */
+#burger li:last-child a {
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+#burger li:last-child {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, .6);
+    text-indent: -999px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+#menu:target #burger li:last-child {
+    left: 0;
+    transition: all .2s;
+    transition-delay: .1s;
+
+}
+
+/* Menu abierto */
+#menu:target #botonera {
+    left: 0;
+    transition: all .5s;
+}
+
+#botonera {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 70vw;
+    height: 100vh;
+    background-color: white;
+    transition: all .5s;
+    z-index: 999;
+}
+
+/* iconos botones */
+#botonera li a::before {
+    content: '';
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+#botonera li:first-child a::before {
+    background-image: url(../icons/icono-app-la-dinastia-inicio.png);
+}
+
+#botonera li:nth-child(2) a::before {
+    background-image: url(../icons/icono-app-la-dinastia-usuario.png);
+}
+
+#botonera li:nth-child(3) a::before {
+    background-image: url(../icons/icono-app-la-dinastia-ubicacion.png);
+}
+
+#botonera li:nth-child(4) a::before {
+    background-image: url(../icons/icono-app-la-dinastia-contacto.png);
+}
+
+#botonera li:last-child a::before {
+    background-image: url(../icons/icono-app-la-dinastia-info.png);
+}
+
+#botonera a {
+    display: block;
+    margin-left: .5rem;
+    font-size: .8rem;
+}
+
+#botonera li {
+    margin: .8rem 0;
+    vertical-align: middle;
+}
+
+/* Hola, Lucas */
+#botonera p::before {
+    content: '';
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url(../icons/logo-la-dinastia-solo-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+/* boton */
+#botonera li a:hover {
+    color: var(--ppal-color);
+    transition: ease-in .1s;
+}
+
+/* logo la dinastia h1 */
+#logo a {
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 8rem;
+    background-image: url(../img/logo-la-dinastia-horizontal-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* titulos */
+#titulo {
+    font-size: .8rem;
+}
+
+/* carrito */
+#cart {
+    position: relative;
+}
+
+#cart a {
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 30px;
+    padding: 0 1.3rem;
+    background-image: url(../icons/icono-app-la-dinastia-cart.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#cant-cart {
+    display: block;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    text-align: center;
+    min-width: .9rem;
+    min-height: .9rem;
+    font-size: .7rem;
+    border-radius: 50%;
+    color: white;
+    background-color: var(--ppal-color);
+}
+
+#total-cart {
+    display: block;
+    position: absolute;
+    bottom: -20%;
+    right: 0;
+    text-align: center;
+    min-width: 1rem;
+    font-size: .7rem;
+    border-radius: 10%;
+    padding: 0 .1rem;
+    color: white;
+    background-color: var(--ppal-color);
+    color: white;
+}
+
+/* flecha back */
+
+.flecha {
+    display: block;
+}
+
+.flecha a {
+    display: block;
+    text-indent: -999px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    background-image: url(../icons/icono-app-la-dinastia-back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* banner */
+#banner-home {
+    text-indent: -999px;
+    overflow: hidden;
+    height: calc(100vw * 218 / 602);
+    max-width: 600px;
+    max-height: 218px;
+    background-image: url(../img/banner-app-home-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+/* banner-tintos */
+#banner-tintos {
+    text-indent: -999px;
+    overflow: hidden;
+    height: calc(100vw * 218 / 602);
+    max-width: 600px;
+    max-height: 218px;
+    background-image: url(../img/banner-app-tintos-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+/* categoría vinos*/
+#categorias div span {
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.icon-tinto {
+    background-image: url(../icons/icono-app-la-dinastia-tinto.png);
+}
+
+.icon-blanco {
+    background-image: url(../icons/icono-app-la-dinastia-blanco.png);
+}
+
+.icon-rosado {
+    background-image: url(../icons/icono-app-la-dinastia-rosado.png);
+}
+
+.icon-espumante {
+    background-image: url(../icons/icono-app-la-dinastia-espumante.png);
+}
+
+.icon-otro {
+    background-image: url(../icons/icono-app-la-dinastia-otros.png);
+}
+
+#categorias p {
+    font-size: .6rem;
+    text-align: center;
+}
+
+#categorias>div>div {
+    position: relative;
+}
+
+
+#categorias a {
+    text-indent: -999px;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* catalogo */
+#catalogo h2 {
+    font-size: 1.1rem;
+    margin-bottom: .2rem;
+}
+
+#catalogo h3 {
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+
+#catalogo p:nth-child(1) {
+    color: rgb(102, 224, 102);
+    font-size: .6rem;
+    margin-bottom: .2rem;
+}
+
+#catalogo h4 {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-bottom: .2rem;
+}
+
+#catalogo p:nth-child(3) {
+    color: rgb(189, 189, 189);
+    font-size: .6rem;
+    margin-bottom: .2rem;
+}
+
+.precio {
+    color: var(--ppal-color);
+    font-size: .8rem;
+}
+
+.agregar a {
+    display: block;
+    text-indent: -999px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    background-image: url(../icons/icono-app-la-dinastia-agregar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* vista carrito */
+
+.main-carrito {
+    margin-bottom: 30vh;
+}
+
+.productos-cart h2 {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.productos-cart .precio {
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+.eliminar {
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    background-image: url(../icons/icono-app-la-dinastia-eliminar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menos {
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 25px;
+    height: 25px;
+    background-image: url(../icons/icono-app-la-dinastia-menos.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+.mas {
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 25px;
+    height: 25px;
+    background-image: url(../icons/icono-app-la-dinastia-mas.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+.cantidad {
+    vertical-align: middle;
+    padding: 0 .4rem;
+    font-size: 1rem;
+}
+
+/* carrito datos */
+#datos-cart h2, #envios-cart h2, #pago-cart h2, #fin-cart h2 {
+    font-size: 1.1rem;
+    margin-bottom: .8rem;
+}
+
+#fin-cart h3 {
+    font-size: 1.3rem; 
+}
+
+.main-carrito form input, .form-enviar input {
+    width: 100%;
+    border-radius: .1rem;
+    border: none;
+    border-bottom: 1px solid #cecece;
+    outline: none;
+    padding: 1rem;
+    margin: .2rem 0;
+}
+
+.main-carrito input::placeholder, .form-enviar input::placeholder, textarea::placeholder {
+    font-size: .7rem;
+    color: gray;
+    opacity: .5;
+}
+
+input[type="checkbox"]{
+    width: initial !important;
+}
+
+input[type="checkbox"] + label {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+input[name="efectivo"] + label {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+#titulo {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: 20px;
+    text-align: center;
+    width: 100%;    
+}
+
+#check {
+    display: inline-block;
+    text-indent: -999px;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    background-image: url(../icons/icono-app-la-dinastia-check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.fin-compra{
+    height: calc(100vh - 5rem);
+    text-align: center;
+}
+
+.fin-compra aside {
+    height: 95%;
+}
+
+footer {
+    height: 18vh;
+}
+
+/* detalle */
+
+
+.main-detalle h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.main-detalle p:nth-child(1) {
+    color: rgb(102, 224, 102);
+    font-size: .8rem;
+    margin-bottom: .2rem;
+}
+
+
+.main-detalle p:nth-of-type(2) {
+    color: rgb(131, 131, 131);
+    font-size: .8rem;
+    margin-bottom: .2rem;
+}
+
+.main-detalle p:nth-of-type(3) {
+    color: rgb(41, 41, 41);
+    font-size: .8rem;
+    margin-top: 1rem;
+    margin-bottom: .2rem;
+}
+
+
+.main-detalle .precio {
+    color: var(--negro-color);
+    font-size: 1.2rem;
+}
+
+.main-detalle .agregar a {
+    display: block;
+    text-indent: -999px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    background-image: url(../icons/icono-app-la-dinastia-agregar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* menu */
+
+#menu-info h2, #menu-dir h2 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#menu-dir h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#menu-dir h3 {
+    font-weight: 600;
+    font-size: 1rem; 
+}
+
+#menu-dir p {
+    font-size: .8rem;
+    margin-bottom: .2rem;
+    color: var(--negro-color);
+}
+
+#menu-dir li {
+    padding-bottom: .8rem;
+    margin-bottom: .8rem;
+    border-bottom: 1px solid #bbbbbb;
+}
+/* info */
+
+#menu-info form input {
+    width: 100%;
+    border-radius: .1rem;
+    border: none;
+    border-bottom: 1px solid #cecece;
+    outline: none;
+    padding-bottom:.2rem;
+    margin: .2rem 0;
+    font-size: .8rem;
+    color: var(--negro-color);
+}
+
+#menu-info label {
+    font-size: .6rem;
+    color: gray;
+    margin-bottom: 0;
+    
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border-radius: .1rem;
+    border: none;
+    border-bottom: 1px solid #cecece;
+    outline: none;
+    padding-left: 1rem;
+    padding-bottom: .2rem;
+    margin: 1.2rem 0;
+}
+
+input[type="submit"] {
+    padding: .6rem !important;
+    font-size: 1rem !important;
+    border-radius: .2rem !important;
+}
+
+
+
+
+#catalogo figure {
+    max-width: 25%;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+/* antes de tablet */
+@media screen and (min-width: 456px) {
+
+    /* catalogo */
+    #catalogo h2 {
+        font-size: 1.3rem;
+    }
+
+    #catalogo h3, .productos-cart h3 {
+        font-size: 1.1rem;
+    }
+
+    #catalogo p:nth-child(1),
+    #catalogo p:nth-child(3) {
+        font-size: .8rem;
+    }
+
+    #catalogo h4, .productos-cart h2
+    .precio {
+        font-size: 1rem;
+    }
+
+}
+
+
+
+/* tablet */
+@media screen and (min-width: 576px) {
+
+    /* banner home */
+    #banner-home {
+        height: calc(100vw * 293 / 800);
+        max-width: 800px;
+        max-height: 240px;
+        background-image: url(../img/banner-app-home-tablet.jpg);
+    }
+
+    /* banner tintos */
+    #banner-tintos {
+        height: calc(100vw * 293 / 800);
+        max-width: 800px;
+        max-height: 240px;
+        background-image: url(../img/banner-app-tintos-tablet.jpg);
+    }
+
+
+    /* catalogo */
+    #catalogo h2 {
+        margin-bottom: .4rem;
+    }
+
+    #catalogo h3 {
+        margin-bottom: 1.2rem;
+    }
+
+    #catalogo p:nth-child(1) {
+        margin-bottom: .4rem;
+    }
+
+    #catalogo h4 {
+        margin-bottom: .4rem;
+    }
+
+    #catalogo p:nth-child(3) {
+        margin-bottom: .4rem;
+    }
+
+    #catalogo figure {
+        max-width: 40%;
+    }
+     
+
+    /* foto producto*/
+
+    #catalogo figure {
+        width: 100% !important;
+    }
+
+    /* carrito */
+   
+
+    #datos-cart h2, #envios-cart h2, #pago-cart h2, #fin-cart h2 {
+        font-size: 1.6rem;
+        margin-bottom: .8rem;
+    }
+    
+    #fin-cart h3 {
+        font-size: 1.4rem; 
+    }
+    
+    .main-carrito form input{
+        padding: 1.8rem;
+    }
+    
+    .main-carrito input::placeholder {
+        font-size: 1rem;
+    }
+    
+    input[type="checkbox"]{
+        width: initial !important;
+    }
+    
+    input[type="checkbox"] + label {
+        display: inline-block;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    
+    input[name="efectivo"] + label {
+        display: inline-block;
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+
+    #menu-info figure {
+        width: 50%;
+    }
+
+    .tamano-lg {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .main-detalle figure {
+        max-width: 55%;
+    }
+
+    
+
+}
+
+/* limitar contenedor a tabler */
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
